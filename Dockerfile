@@ -28,4 +28,4 @@ RUN ["/bin/bash","./prepare-env.sh"]
 
 EXPOSE 5000
 
-CMD ["python","/opt/data/api/server.py"]
+CMD ["python","./api/server.py"]
