@@ -1,16 +1,13 @@
 # INSTALL PYTHON IMAGE
 FROM python:3.5.2
-
-# INSTALL PYTHON IMAGE
-FROM python:3.5.2
+MAINTAINER Valudio <development@valudio.com>
 
 # INSTALL TOOLS
-RUN apt-get update
-RUN apt-get -y install unzip
-RUN apt-get -y install libaio-dev
-
-RUN mkdir -p /opt/data/api
-RUN cd /opt/data
+RUN apt-get update \
+    && apt-get -y install unzip \
+    && apt-get -y install libaio-dev \
+    && mkdir -p /opt/data/api \
+    && cd /opt/data
 
 ADD ./oracle-instantclient/ /opt/data
 ADD ./prepare-env.sh /opt/data
