@@ -1,2 +1,2 @@
-# docker-python-flask-oracle
-This docker images serves as an environment to execute a python flask API with oracle database connection.
+# docker-python-oracle
+This docker image serves as an environment to execute python scripts with oracle database connection.

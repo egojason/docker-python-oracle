@@ -1,9 +1,11 @@
 # INSTALL PYTHON IMAGE
-FROM python:3.6
+FROM python:3.6-slim
 MAINTAINER Peisheng Jiang <egojason@gmail.com>
 
 # INSTALL TOOLS
 RUN apt-get update \
+    # gcc required for cx_Oracle
+    && apt-get -y install gcc \
     && apt-get -y install unzip \
     && apt-get -y install libaio-dev \
     && mkdir -p /opt/data/api
