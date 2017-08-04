@@ -25,3 +25,25 @@ On Windows:
 docker run -v c:\<path>:c:\<container path>
 ```
 >In the case of VirtualBox you need to make the host folder available as a **shared folder** in VirtualBox. Then, you can mount it using the Docker -v flag.
+
+### [Forward host port to Docker Machine](https://stackoverflow.com/questions/36286305/how-do-i-forward-a-docker-machine-port-to-my-host-port-on-osx)
+>At this time Docker Machine is a virtual machine running under VirtualBox in your machine, so to expose your application port you need to map your virtual machine port to your host port.
+
+```bash
+docker-machine stop default
+```
+
+>Option 1 - Use the VirtualBox interface
+- Open VirtualBox Manager
+- Select your Docker Machine VirtualBox image (e.g.: default)
+- Open Settings -> Network -> Advanced -> Port Forward
+- Add your app name, the desired host port (e.g.: 80) and your Guest port (e.g.: 80)
+
+>Option 2 - Use the VirtualBox command line
+```
+VBoxManage modifyvm "default" --natpf1 "web,tcp,,80,,80"
+```
+
+```bash
+docker-machine start default
+```
