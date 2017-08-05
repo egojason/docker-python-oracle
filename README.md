@@ -1,4 +1,5 @@
 # docker-python-oracle
+Inspired by [valudio/docker-python-flask-oracle](https://github.com/valudio/docker-python-flask-oracle)  
 This docker image serves as an environment to execute python scripts with oracle database connection.
 
 ## build
